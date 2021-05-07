@@ -1,9 +1,8 @@
 package example
 
-object Hello extends Greeting with App {
-  println(greeting)
-}
+import example.FileOperations._
 
-trait Greeting {
-  lazy val greeting: String = "hello"
+object Hello extends App {
+  val data = readFile("src/resources/data.txt")
+  data.foreach(println)
 }
